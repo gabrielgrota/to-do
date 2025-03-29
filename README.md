@@ -21,6 +21,12 @@ to organize my stuff.
 <img src="./src/assets/firebase.png" style="width: 30px" />
 
 ---
+to run the desktop app:
+
+npm run build
+npx tauri build
+
+---
 ---
 
 # React + TypeScript + Vite

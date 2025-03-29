@@ -1,0 +1,33 @@
+.add-task-main {
+    display: flex;
+    align-items: center;
+}
+
+.add-task-main input {
+    border-radius: 15px;
+    background-color: #ededed;
+    border: none;
+    height: 20px;
+    padding: 10px;
+}
+
+.add-task-main input:hover {
+    border-radius: 15px;
+    background-color: #cecece;
+}
+
+.add-task-main button {
+    background: none;
+    border: none;
+    border-radius: 30px;
+}
+
+.add-task-main img {
+    width: 24px;
+    border-radius: 30px;
+    padding: 4px;
+}
+
+.add-task-main img:hover {
+    background-color: #dedede;
+}

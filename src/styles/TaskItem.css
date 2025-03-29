@@ -1,0 +1,19 @@
+.item-main {
+    display: flex;
+    align-items: center;
+}
+
+.item-main button {
+    background: none;
+    border: none;
+}
+
+.item-main img {
+    width: 20px;
+    border-radius: 30px;
+    padding: 4px;
+}
+
+.item-main img:hover {
+    background-color: #dedede;
+}

@@ -1,25 +1,27 @@
 import { useState } from "react"
-import Button from "./Button"
+
+import '../styles/AddTask.css'
+
+import imgAdd from '../assets/add.png'
 
 interface AddTaskProps {
   onAddTask: (task: string) => void;
 }
 
-
                   /* props esperada // tipo da props (interface) */
 function AddTask({ onAddTask }: AddTaskProps) {
   const [inputValue, setInputValue] = useState<string>('');
 
-  /* somente vizualização */
-  const [taskText, setTaskText] = useState<string>('');
+  /* somente vizualização
+  const [taskText, setTaskText] = useState<string>(''); */
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   }
 
   const handleClick = () => {
-    /* somente vizualização */
-    setTaskText(inputValue);
+    /* somente vizualização
+    setTaskText(inputValue); */
 
     /* joga o valor do input via props */
     if (inputValue.trim()) {
@@ -30,12 +32,15 @@ function AddTask({ onAddTask }: AddTaskProps) {
 
   return (
     <div className="add-task-main">
-        <h1>New Task</h1>
-        <input type="text" value={inputValue} onChange={handleChange} />
+        <input 
+          type="text" 
+          placeholder="add a new task"
+          value={inputValue} 
+          onChange={handleChange} />
 
-        <Button text="add" onClick={handleClick} />
-
-        <p>{taskText}</p>
+        <button onClick={handleClick}>
+          <img src={imgAdd} />
+        </button>
     </div>
   )
 }

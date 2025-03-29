@@ -1,27 +1,25 @@
-import { useState } from 'react'
-import AddTask from './AddTask';
+import TaskItem from './TaskItem'
 
+interface TaskManagerProps {
+    tasks: { id: number; text: string }[];
+    onEditTask: (id: number, newText: string) => void;
+    onDeleteTask: (id: number) => void;
+}
 
 /* controla a lista de tarefas */
-function TaskManager() {
-    const [tasks, setTasks] = useState<string[]>([]);
-
-    const handleAddTask = (newTask: string) => {
-        setTasks([...tasks, newTask]); // puxa todas as outras e adiciona a nova
-        console.log("Task added: ", newTask); // aqui entrará a lógica do banco de dados
-    };
-
+function TaskManager({ tasks, onEditTask, onDeleteTask}: TaskManagerProps) {
+    
     return (
-        <div>
-            <AddTask onAddTask={handleAddTask} />
-
-            <div className='task-list'>
-                {tasks.map((task, index) => (
-                    <p key={index}>{task}</p> // renderiza as tarefas adicionadas
+            <ul>
+                {tasks.map(task => (
+                    <TaskItem 
+                        key={task.id}
+                        task={task}
+                        onEdit={onEditTask}
+                        onDelete={onDeleteTask}
+                    />
                 ))}
-
-            </div>
-        </div>
+            </ul>
     )
 }
 
